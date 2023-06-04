@@ -12,18 +12,18 @@ namespace ConsoleTestApp
         {
             Console.WriteLine("ConsoleTestAppWeather");
 
-            //получаем данные
+            //ГЇГ®Г«ГіГ·Г ГҐГ¬ Г¤Г Г­Г­Г»ГҐ
             string url = "https://api.openweathermap.org/data/2.5/find?q=Sukhum&units=metric&appid=f5fe011467ae500e6f54951b409d5221";
             var service = new WebWeatherApiService(url);
             var cars = await service.GetWeatherAsync();
 
-            Console.WriteLine($"Получено {cars.Count()} авто");
+            Console.WriteLine($"ГЏГ®Г«ГіГ·ГҐГ­Г® {cars.Count()} РґР°РЅРЅС‹СЉ");
 
-            //сохраняем данные в БД
+            //Г±Г®ГµГ°Г Г­ГїГҐГ¬ Г¤Г Г­Г­Г»ГҐ Гў ГЃГ„
             var repository = new WeathersRepository();
             int result = await repository.SaveWeathersAsync(cars);
 
-            Console.WriteLine($"Сохранено {result.ToString()} авто в БД");
+            Console.WriteLine($"Г‘Г®ГµГ°Г Г­ГҐГ­Г® {result.ToString()} РґР°РЅРЅС‹СЉ РІ Р‘Р”");
 
             Console.ReadLine();
         }
